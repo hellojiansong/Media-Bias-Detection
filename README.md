@@ -12,11 +12,9 @@
 
 This project investigates whether a contextual Transformer model improves on a conventional lexical baseline in sentence-level media bias classification, particularly when labels are subjective and imbalanced.
 
-**[Read the full research report (PDF)](reports/Text_Mining_Final_Assignment_Report.pdf)**
-
 ## Results
 
-The following values are reported in our course report:
+The following results were obtained from our course experiments:
 
 | Dataset | Model | Accuracy | Macro F1 |
 | --- | --- | ---: | ---: |
@@ -25,7 +23,7 @@ The following values are reported in our course report:
 | Refined | TF-IDF + Logistic Regression | 0.587 | — |
 | Refined | Fine-tuned BERT | 0.786 | — |
 
-*The report provides overall accuracy for the refined runs but does not tabulate their macro-F1 scores in the same summary. Original and refined evaluations use different subsets, so changes in accuracy should not be interpreted as a controlled, same-test-set improvement.*
+*Macro-F1 scores for the refined experiments are not included in this summary. Original and refined evaluations use different subsets, so changes in accuracy should not be interpreted as a controlled, same-test-set improvement.*
 
 ### Key observations
 
@@ -80,22 +78,18 @@ Repeat both experiments on a filtered subset based on annotator agreement. This 
 ```text
 Media-Bias-Detection/
 ├── README.md
-├── requirements.txt                 # Add compatible dependency versions
-├── data/                            # Dataset, if redistribution is permitted
+├── requirements.txt
+├── data/
 │   └── Sora_LREC2020_biasedsentences.csv
 ├── src/
 │   ├── tfidf_lr_baseline.py
 │   ├── tfidf_lr_refined.py
 │   ├── bert_baseline.py
 │   └── bert_refined.py
-├── notebooks/
-│   ├── bert_baseline.ipynb
-│   └── bert_refined.ipynb
-└── reports/
-    └── Text_Mining_Final_Assignment_Report.pdf
+└── notebooks/
+    ├── bert_baseline.ipynb
+    └── bert_refined.ipynb
 ```
-
-The names above are suggested repository filenames; rename the original assignment files accordingly if using this structure.
 
 ## Running the experiments
 
@@ -104,23 +98,22 @@ The names above are suggested repository filenames; rename the original assignme
 3. Run the TF-IDF experiments as standard Python scripts.
 4. Open the BERT notebooks in **Google Colab**, adjust the Google Drive CSV path, and run the cells. The original BERT `.py` exports contain notebook-specific commands (such as `!pip install` and Google Drive mounting), so they need adaptation before running as standalone Python files.
 
-**Reproducibility note:** The source files were developed for coursework and have not yet been consolidated into a fully tested, one-command reproduction pipeline. The report documents the experimental settings and results.
+**Reproducibility note:** The source files were developed for coursework and have not yet been consolidated into a fully tested, one-command reproduction pipeline. Experimental settings and evaluation results are summarized in this README.
 
 ## Academic context and contributions
 
-This project was completed as part of the **Text Mining** course in the **MSc Computer Science (Data Science)** programme at **Leiden University**. It was a collaborative course research project, not an independently published paper.
+This project was completed as part of the **Text Mining** course in the **MSc Computer Science (Data Science)** programme at **Leiden University**.
 
-**Team contributions:**
+It was a **collaborative academic project**, involving the development and comparison of traditional machine learning and Transformer-based approaches to sentence-level media bias detection.
 
-- **Jian Song:** Implemented the **TF-IDF + Logistic Regression** baseline.
-- **Rahul Ray:** Implemented the **fine-tuned BERT** model.
-- **Both authors:** Collaborated on the experimental comparison, discussions, data-refinement investigation, and final report.
+**My contributions:**
 
-### Full research report
+- Implemented the **TF-IDF + Logistic Regression** baseline for sentence-level classification.
+- Contributed to the comparative evaluation of traditional machine learning and BERT-based approaches.
+- Participated in the analysis of annotation disagreement, model performance, and interpretability.
+- Collaborated with a teammate on the experimental investigation and research discussions.
 
-📄 **[Text Mining Final Assignment Report (PDF)](reports/Text_Mining_Final_Assignment_Report.pdf)**
-
-The nine-page report includes the research question, experimental design, model implementation details, evaluation results, error analysis, discussion, and references. It credits both authors.
+**Collaboration note:** The fine-tuned BERT implementation was developed by a teammate as part of the collaborative project. The results presented here reflect the combined work of the project team.
 
 ## Reference
 
